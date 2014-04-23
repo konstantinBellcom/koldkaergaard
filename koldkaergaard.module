@@ -29,9 +29,12 @@ function koldkaergaard_menu() {
 }
 
 function _koldkaergaard_moderator_page(){
-  $items['title'] = array(
-    '#type' => 'markup',
-    '#markup' => '<a href="admin/structure/entityform_types/manage/online_booking/submissions">Form submissions</a>',
+
+  $items['submissions'] = array(
+    '#theme' => 'link',
+    '#text' => 'Form submissions',
+    '#path' => 'admin/structure/entityform_types/manage/online_booking/submissions',
+    '#options' => array('attributes' => array('title' => 'Form submissions'), 'html' => false),
   );
 
   return $items;

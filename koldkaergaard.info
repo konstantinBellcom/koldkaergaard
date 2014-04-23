@@ -1,0 +1,4 @@
+name = Koldkaergaard
+description = Quick access to koldkaergaard management for moderators
+core = 7.x
+version = 7.x

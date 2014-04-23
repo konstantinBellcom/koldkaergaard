@@ -1,0 +1,38 @@
+<?php
+
+function koldkaergaard_menu() {
+
+  $items['admin/config/koldkaergaard'] = array(
+    'title' => 'Koldkaergaard',
+    'position' => 'left',
+    'weight' => -50,
+    'page callback' => 'system_admin_menu_block_page',
+    'access arguments' => array('access content'),
+    'file' => 'system.admin.inc',
+    'file path' => drupal_get_path('module', 'system'),
+  );
+
+  $items['admin/config/koldkaergaard/moderator'] = array(
+    'title' => 'Koldkaergaard',
+    'page callback' => 'drupal_goto',
+    'page arguments' => array('admin/koldkaergaard/moderator'),
+    'access arguments' => array('access content'),
+  );
+
+  $items['admin/koldkaergaard/moderator'] = array(
+    'title' => 'Koldkaergaard',
+    'page callback' => '_koldkaergaard_moderator_page',
+    'access arguments' => array('access content'),
+  );
+
+  return $items;
+}
+
+function _koldkaergaard_moderator_page(){
+  $items['title'] = array(
+    '#type' => 'markup',
+    '#markup' => '<a href="admin/structure/entityform_types/manage/online_booking/submissions">Form submissions</a>',
+  );
+
+  return $items;
+}

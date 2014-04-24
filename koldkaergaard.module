@@ -30,11 +30,21 @@ function koldkaergaard_menu() {
 
 function _koldkaergaard_moderator_page(){
 
-  $items['submissions'] = array(
+  $items['koldkaergaard'] = array(
+    '#type' => 'fieldset',
+    '#collapsible' => true,
+    '#collapsed' => true,
+    '#title' => t('Koldkaergaard'),
+  );
+
+  $items['koldkaergaard']['submissions'] = array(
     '#theme' => 'link',
     '#text' => 'Form submissions',
     '#path' => 'admin/structure/entityform_types/manage/online_booking/submissions',
-    '#options' => array('attributes' => array('title' => 'Form submissions'), 'html' => false),
+    '#options' => array('attributes' => array('title' => 'View booking form submissions'), 'html' => false),
+    '#description' => t('Allows you to manage online booking form submissions'),
+    '#prefix' => '<p>',
+    '#sufix' => '</p>',
   );
 
   return $items;
